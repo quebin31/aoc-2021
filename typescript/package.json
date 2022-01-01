@@ -1,0 +1,22 @@
+{
+  "name": "aoc-2021",
+  "version": "1.0.0",
+  "description": "Advent of Code 2021",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node --experimental-modules ./dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Del Castillo",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^17.0.2",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "lazyiter": "^1.0.3",
+    "readline": "^1.3.0"
+  }
+}
