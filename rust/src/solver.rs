@@ -1,0 +1,25 @@
+// Copyright (C) 2022 Kevin Del Castillo Ramírez
+//
+// This file is part of rust.
+//
+// rust is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// rust is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with rust.  If not, see <http://www.gnu.org/licenses/>.
+
+use anyhow::Result;
+use async_trait::async_trait;
+
+#[async_trait]
+pub trait Solver {
+    async fn part1(&self) -> Result<String>;
+    async fn part2(&self) -> Result<String>;
+}
