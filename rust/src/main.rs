@@ -6,7 +6,7 @@ use text_io::read;
 use crate::common::DAYS;
 
 mod common;
-mod day1;
+mod days;
 mod input;
 mod solver;
 

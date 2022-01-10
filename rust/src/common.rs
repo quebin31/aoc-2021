@@ -18,7 +18,7 @@
 use anyhow::Result;
 use lazy_static::lazy_static;
 
-use crate::day1::Day1Solver;
+use crate::days::day1::Day1Solver;
 use crate::solver::Solver;
 
 pub struct Problem {
