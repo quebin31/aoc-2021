@@ -1,4 +1,4 @@
-package aoc.day2
+package aoc.days.day2
 
 import aoc.common.Problem
 import aoc.common.ProblemSolver

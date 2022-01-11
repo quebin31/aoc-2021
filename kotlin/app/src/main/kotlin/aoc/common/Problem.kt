@@ -1,7 +1,7 @@
 package aoc.common
 
-import aoc.day1.Day1Solver
-import aoc.day2.Day2Solver
+import aoc.days.day1.Day1Solver
+import aoc.days.day2.Day2Solver
 
 val Days = arrayOf(
     Problem.Day1,
