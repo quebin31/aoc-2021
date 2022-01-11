@@ -19,6 +19,7 @@ use anyhow::Result;
 use lazy_static::lazy_static;
 
 use crate::days::day1::Day1Solver;
+use crate::days::day2::Day2Solver;
 use crate::solver::Solver;
 
 pub struct Problem {
@@ -47,5 +48,8 @@ impl Problem {
 }
 
 lazy_static! {
-    pub static ref DAYS: Vec<Problem> = vec![Problem::new("input1.txt", "Day 1", Day1Solver)];
+    pub static ref DAYS: Vec<Problem> = vec![
+        Problem::new("input1.txt", "Day 1", Day1Solver),
+        Problem::new("input2.txt", "Day 2", Day2Solver),
+    ];
 }
