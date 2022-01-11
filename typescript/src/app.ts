@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with AoC-2021.  If not, see <http://www.gnu.org/licenses/>.
 
-import { releaseInputControl, Problems, question } from "./common.js"
+import { releaseInputControl, Problems, question, solve } from "./common.js"
 
 let index = 1
 console.log('Choose day:')
@@ -26,11 +26,12 @@ for (const problem in Problems) {
 
 const answer = (await question('>> ')).trim()
 const key = `Day${answer}`
-const problem = Problems[key] || {
-    solve: async () => {
-        console.log(`Incorrect day selection: ${answer}`)
-    }
+const problem = Problems[key]
+
+if (problem === undefined) {
+    console.log(`Incorrect day selection: ${answer}`)
+} else {
+    await solve(problem)
 }
 
-await problem.solve()
 releaseInputControl()

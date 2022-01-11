@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with typescript.  If not, see <http://www.gnu.org/licenses/>.
 
-import { Problems, readInputLines } from "./common.js";
+import { Problems, readInputLines } from "../common.js";
 
 type Instruction = {
     cmd: 'forward' | 'down' | 'up',
@@ -39,50 +39,44 @@ async function inputInstructions(): Promise<Array<Instruction>> {
     return instructions
 }
 
-async function part1(): Promise<string> {
-    const instructions = await inputInstructions()
+export const Day2Solver: Solver = {
+    part1: async (): Promise<string> => {
+        const instructions = await inputInstructions()
 
-    let horizontalPos = 0
-    let depth = 0
+        let horizontalPos = 0
+        let depth = 0
 
-    for (const instruction of instructions) {
-        if (instruction.cmd === 'forward') {
-            horizontalPos += instruction.amount
-        } else if (instruction.cmd === 'down') {
-            depth += instruction.amount
-        } else {
-            depth -= instruction.amount
+        for (const instruction of instructions) {
+            if (instruction.cmd === 'forward') {
+                horizontalPos += instruction.amount
+            } else if (instruction.cmd === 'down') {
+                depth += instruction.amount
+            } else {
+                depth -= instruction.amount
+            }
         }
-    }
 
-    return (horizontalPos * depth).toString()
-}
+        return (horizontalPos * depth).toString()
+    },
 
-async function part2(): Promise<string> {
-    const instructions = await inputInstructions()
+    part2: async (): Promise<string> => {
+        const instructions = await inputInstructions()
 
-    let aim = 0
-    let horizontalPos = 0
-    let depth = 0
+        let aim = 0
+        let horizontalPos = 0
+        let depth = 0
 
-    for (const instruction of instructions) {
-        if (instruction.cmd === 'forward') {
-            horizontalPos += instruction.amount
-            depth += aim * instruction.amount
-        } else if (instruction.cmd === 'down') {
-            aim += instruction.amount
-        } else {
-            aim -= instruction.amount
+        for (const instruction of instructions) {
+            if (instruction.cmd === 'forward') {
+                horizontalPos += instruction.amount
+                depth += aim * instruction.amount
+            } else if (instruction.cmd === 'down') {
+                aim += instruction.amount
+            } else {
+                aim -= instruction.amount
+            }
         }
+
+        return (horizontalPos * depth).toString()
     }
-
-    return (horizontalPos * depth).toString()
-}
-
-export async function solve() {
-    const part1Answer = await part1()
-    console.log(`Part 1 Answer: ${part1Answer}`)
-
-    const part2Answer = await part2()
-    console.log(`Part 2 Answer: ${part2Answer}`)
 }
