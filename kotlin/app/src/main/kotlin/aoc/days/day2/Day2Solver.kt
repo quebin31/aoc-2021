@@ -1,7 +1,7 @@
 package aoc.days.day2
 
 import aoc.common.Problem
-import aoc.common.ProblemSolver
+import aoc.common.Solver
 import aoc.common.readInputLines
 
 sealed interface Command {
@@ -24,7 +24,7 @@ sealed interface Command {
     }
 }
 
-object Day2Solver : ProblemSolver {
+object Day2Solver : Solver {
 
     private suspend fun parseCommands(): Sequence<Command> =
         readInputLines(Problem.Day2).mapNotNull { Command.fromString(it) }

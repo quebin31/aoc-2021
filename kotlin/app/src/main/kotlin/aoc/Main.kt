@@ -1,11 +1,10 @@
 package aoc
 
-import aoc.common.Days
 import aoc.common.Problem
 
 suspend fun main() {
     println("Choose a day:")
-    for ((idx, problem) in Days.withIndex()) {
+    for ((idx, problem) in Problem.Days.withIndex()) {
         println("${idx + 1}) ${problem.name}")
     }
 
